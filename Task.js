@@ -5,6 +5,8 @@ class Task {
     }
     addtask(task){
         this.task.push(new task(Name));
+        console.log("Task is added");
+        console.log("All the tasks are added here.")
     }
     updatetask(task){
         this.task.copy(task)
