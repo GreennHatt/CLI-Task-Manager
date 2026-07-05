@@ -1,18 +1,36 @@
 class Task {
-    constructor(Name,deadline){
-        this.name=Name ;
-        this.deadline=deadline ;
+    constructor(){
+        this.tasks= [];
     }
-    addtask(task){
-        this.task.push(new task(Name));
-        console.log("Task is added");
-        console.log("All the tasks are added here.")
+    addtask(Name){
+        this.tasks.push(Name);
+        console.log("Tasks added");
     }
-    updatetask(task){
-        this.task.copy(task)
+    updatetask(index,newtask){
+        if(index>=0 && index< this.tasks.length){
+            this.tasks[index]=newtask;
+            console.log("Task updated");
+        }
+        else {
+            console.log("Invalid Task entry");
+        }
+    }
+    deletetask(index){
+        if(index>=0 && index< this.tasks.length){
+            this.tasks.splice(index,1);
+            console.log("Task deleted");
+        }
+        else {
+            console.log("Invalid Task entry");
+        }
+    }
+    displaytask(){
+        console.log("\nTasks Available Are ");
+        
+        for (let i=0 ; i< this.tasks.length; i++){
+            console.log((i+1) + " . " + this.tasks[i] );
+        }
     }
 
 }
-const task=new Task();
-task.addtask("Java",6);
-manager.addtask();
+export default Task;
